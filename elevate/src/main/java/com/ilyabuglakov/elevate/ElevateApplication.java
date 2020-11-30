@@ -1,4 +1,4 @@
-package com.ilyabuglakov.elevate.application;
+package com.ilyabuglakov.elevate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
