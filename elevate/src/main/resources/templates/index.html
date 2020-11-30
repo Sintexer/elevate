@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Elevate</title>
+    <link th:insert="bootstrap::style"/>
 </head>
+<div th:include="navbar::navbar"></div>
 <body>
     <p>Добро пожаловать</p>
+<div th:insert="bootstrap::js"></div>
 </body>
 </html>
