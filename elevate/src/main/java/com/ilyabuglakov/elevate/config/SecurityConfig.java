@@ -1,5 +1,6 @@
 package com.ilyabuglakov.elevate.config;
 
+import com.ilyabuglakov.elevate.model.Permission;
 import com.ilyabuglakov.elevate.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers(HttpMethod.GET, "/devs/**").hasAnyRole(Role.ADMIN.name(), Role.USER.name())
-                .antMatchers(HttpMethod.POST, "/devs/**").hasRole(Role.ADMIN.name())
-                .antMatchers(HttpMethod.DELETE, "/devs/**").hasRole(Role.ADMIN.name())
+                .antMatchers(HttpMethod.GET, "/devs/**").hasAuthority(Permission.DEV_READ.getPermission())
+                .antMatchers(HttpMethod.POST, "/devs/**").hasAuthority(Permission.DEV_EDIT.getPermission())
+                .antMatchers(HttpMethod.DELETE, "/devs/**").hasAuthority(Permission.DEV_EDIT.getPermission())
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
@@ -37,12 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 User.builder()
                         .username("admin")
                         .password(passwordEncoder().encode("admin"))
-                        .roles(Role.ADMIN.name())
+                        .authorities(Role.ADMIN.getAuthorities())
                         .build(),
                 User.builder()
                         .username("user")
                         .password(passwordEncoder().encode("user"))
-                        .roles(Role.USER.name())
+                        .authorities(Role.USER.getAuthorities())
                         .build()
         );
     }
