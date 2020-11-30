@@ -1,4 +1,4 @@
-package com.ilyabuglakov.elevate.model;
+package com.ilyabuglakov.elevate.model.authentication;
 
 public enum  Permission {
     DEV_READ("dev:read"),

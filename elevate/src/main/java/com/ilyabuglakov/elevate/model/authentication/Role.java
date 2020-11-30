@@ -1,4 +1,4 @@
-package com.ilyabuglakov.elevate.model;
+package com.ilyabuglakov.elevate.model.authentication;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
