@@ -1,0 +1,47 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Please sign in</title>
+    <link th:insert="bootstrap::style"/>
+</head>
+<body>
+<div class="container-xl">
+    <form method="post" th:object="${user}" action="/registration/new" enctype="utf8">
+        <div th:if="${registrationFailed}">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p>
+                    Пользователь с почтой <strong th:text="${registrationFailed}"> уже существует!</strong>
+                    Пожалуйста, введите другую почту или войдите в уже существующий аккаунт <a
+                        href="/auth/login">Войти</a></p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <h2>Регистрация</h2>
+        <h3>Заполните поля:</h3>
+        <p>
+            <label for="email">Почта</label>
+            <input type="text" id="email" name="email" placeholder="email@anyDomen.com" required autofocus>
+        </p>
+        <p>
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+        </p>
+        <p>
+            <label for="surname">Фамилия</label>
+            <input type="text" id="surname" name="surname" placeholder="Surname" required autofocus>
+        </p>
+        <p>
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <button type="submit">Готово</button>
+    </form>
+</div>
+<div th:insert="bootstrap::js"></div>
+</body>
+</html>

@@ -7,7 +7,50 @@
 </head>
 <div th:include="navbar::navbar"></div>
 <body>
+<div class="characteristics">
+    <div class="container-xl">
+        <div id="characteristicsCarousel" class="carousel slide" data-ride="carousel">
+            <div class="row justify-content-start py-3">
+                <div class="col-4">
+                    <div class="list-group">
+                        <button type="button" data-target="#characteristicsCarousel"
+                                class="list-group-item list-group-item-action" data-slide-to="0">Memory - Памямть
+                        </button>
+                        <button type="button" data-target="#characteristicsCarousel"
+                                class="list-group-item list-group-item-action" data-slide-to="1">Reaction - Реакция
+                        </button>
+                        <button type="button" data-target="#characteristicsCarousel"
+                                class="list-group-item list-group-item-action" data-slide-to="2">Calculations -
+                            Вычисления
+                        </button>
+                        <button type="button" data-target="#characteristicsCarousel"
+                                class="list-group-item list-group-item-action" data-slide-to="3">Logic - Логика
+                        </button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <span>Memory - описание поля</span>
+                        </div>
+                        <div class="carousel-item">
+                            <span>Reaction - описание поля</span>
+                        </div>
+                        <div class="carousel-item">
+                            <span>Calculations - описание поля</span>
+                        </div>
+                        <div class="carousel-item">
+                            <span>Logic - описание поля</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content container-xl">
     <p>Добро пожаловать</p>
+</div>
 <div th:insert="bootstrap::js"></div>
 </body>
 </html>

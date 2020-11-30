@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevate профиль</title>
+    <link th:insert="bootstrap::style"/>
+</head>
+<div th:include="navbar::navbar"></div>
+<body>
+<div class="content container-xl">
+    <p>Добро пожаловать</p>
+    <p th:if="${user}"><p th:text="${user.name}"></p></div>
+</div>
+<div th:insert="bootstrap::js"></div>
+</body>
+</html>

@@ -2,7 +2,8 @@ package com.ilyabuglakov.elevate.model.authentication;
 
 public enum  Permission {
     DEV_READ("dev:read"),
-    DEV_EDIT("dev:edit");
+    DEV_EDIT("dev:edit"),
+    AUTH("auth");
 
     private final String permission;
 
