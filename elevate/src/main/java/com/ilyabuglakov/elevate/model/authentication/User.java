@@ -15,7 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
@@ -32,6 +33,8 @@ public class User {
     private String surname;
     private String password;
 
+    private LocalDate registrationDate;
+
     @Enumerated(value = EnumType.STRING)
     private Role role = Role.USER;
 
@@ -42,8 +45,8 @@ public class User {
     @JoinColumn(name = "characteristic_id")
     private Characteristic characteristic = new Characteristic();
 
-//    @PrePersist
-//    private void characteristics() {
-//        this.characteristic = new Characteristic();
-//    }
+    @PrePersist
+    private void characteristics() {
+        this.registrationDate = LocalDate.now();
+    }
 }

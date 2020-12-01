@@ -1,15 +1,13 @@
 package com.ilyabuglakov.elevate.controller;
 
-import com.ilyabuglakov.elevate.model.authentication.User;
 import com.ilyabuglakov.elevate.model.registration.FormUserDTO;
-import com.ilyabuglakov.elevate.service.UserService;
+import com.ilyabuglakov.elevate.service.UserSecurityDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
@@ -19,7 +17,7 @@ import javax.validation.Valid;
 public class RegistrationController {
 
     @Autowired
-    private UserService userService;
+    private UserSecurityDetailsService userService;
 
     @GetMapping
     public String getRegistrationPage(){

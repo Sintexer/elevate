@@ -23,7 +23,7 @@ public class Characteristic {
     @Id
     @GeneratedValue
     private Long id;
-    private int memoryValue;
+    private int memory;
 
     @OneToOne(mappedBy = "characteristic", cascade = CascadeType.ALL)
     private User user;

@@ -2,34 +2,26 @@ package com.ilyabuglakov.elevate.service;
 
 import com.ilyabuglakov.elevate.model.authentication.User;
 import com.ilyabuglakov.elevate.repository.UserRepository;
-import com.ilyabuglakov.elevate.security.SecurityUser;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-@Service("userSecurityDetailsService")
-@Getter
-public class UserSecurityDetailsService implements UserDetailsService {
+import java.util.Optional;
+
+@Service
+public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserSecurityDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(email).orElseThrow(() ->
-                new UsernameNotFoundException("User does't exist"));
-        //TODO converter here
-        return SecurityUser.fromUser(user);
+    public Optional<User> getUser(String email){
+        return userRepository.findByEmail(email);
     }
 
     public boolean saveUser(User user){

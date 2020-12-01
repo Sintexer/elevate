@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <title>Elevate профиль</title>
     <link th:insert="bootstrap::style"/>
+    <link type="text/css" href="style/style.css">
+    <link type="text/css" href="/style/style.css">
+    <link th:href="@{/style/style.css}" rel="stylesheet"/>
 </head>
 <div th:include="navbar::navbar"></div>
 <body>
+<div class="image-header">
+    <div class="container-xl">
+        <div class="card mb-3 profile-card" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="/images/default-user.jpg" class="card-img" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5><span class="card-title" th:text="${user.name}"></span><span class="text-center"
+                                                                                         th:text="${user.surname}"></span>
+                        </h5>
+                        <p class="card-text" th:text="${user.email}"></p>
+                        <p class="card-text"><small class="text-muted">Дата регистрации:<span
+                                th:text="${user.registrationDate}"></span></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="content container-xl">
-    <p>Добро пожаловать</p>
-    <p th:if="${user}"><p th:text="${user.name}"></p></div>
+    <p>Зачения характеристик пользователя<span class="text-center" th:text="${user.name}"></span>:</p>
+    <div class="row">
+        <div class="col-1">
+            Memory
+        </div>
+        <div class="col">
+            <p th:text="${user.characteristic.memory}"></p>
+        </div>
+    </div>
 </div>
 <div th:insert="bootstrap::js"></div>
 </body>

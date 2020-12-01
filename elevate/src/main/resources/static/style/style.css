@@ -1,0 +1,21 @@
+.test:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background-color: #e8e8e8;
+}
+
+.image-header{
+    background: url("/images/clouds.jpg");
+}
+
+.header-img{
+    width: 100%;
+}
+
+.profile-card{
+    padding: 80px;
+}
