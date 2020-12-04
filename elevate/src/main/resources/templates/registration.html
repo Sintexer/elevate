@@ -8,7 +8,7 @@
     <link th:insert="bootstrap::style"/>
 </head>
 <body>
-<div class="container-xl">
+<div class="container-xl w-25">
     <form method="post" th:object="${user}" action="/registration/new" enctype="utf8">
         <div th:if="${registrationFailed}">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -39,7 +39,7 @@
             <label for="password">Пароль</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         </p>
-        <button type="submit">Готово</button>
+        <button type="submit">Зарегистрироваться</button>
     </form>
 </div>
 <div th:insert="bootstrap::js"></div>

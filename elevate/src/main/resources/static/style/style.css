@@ -9,13 +9,33 @@
 }
 
 .image-header{
-    background: url("/images/clouds.jpg");
-}
-
-.header-img{
+    padding: 40px;
     width: 100%;
 }
 
+.profile-bg{
+    background: url("../images/clouds.jpg");
+}
+
+.index-bg{
+    background: url("../images/index-bg.jpg");
+}
+
+
 .profile-card{
-    padding: 80px;
+    padding: 20px;
+    width: 100%;
+}
+
+.content{
+    /*border: 1px solid gainsboro;*/
+    min-height: 50vh;
+}
+
+.page-footer{
+    background-color: #cce8e2;
+}
+
+.footer-copyright{
+    background-color: #badfdc;
 }

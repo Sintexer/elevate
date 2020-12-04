@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link th:href="@{/static/style/style.css}" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title>Elevate</title>
     <link th:insert="bootstrap::style"/>
 </head>
 <div th:include="navbar::navbar"></div>
+<div class="image-header index-bg">
+
+</div>
 <body>
 <div class="characteristics">
     <div class="container-xl">
-        <div id="characteristicsCarousel" class="carousel slide" data-ride="carousel">
+        <div id="characteristicsCarousel"   class="carousel slide" data-ride="carousel">
             <div class="row justify-content-start py-3">
                 <div class="col-4">
                     <div class="list-group">
@@ -48,9 +52,10 @@
         </div>
     </div>
 </div>
-<div class="content container-xl">
+<div class="content container-xl border-top">
     <p>Добро пожаловать</p>
 </div>
+<div th:insert="footer::footer"></div>
 <div th:insert="bootstrap::js"></div>
 </body>
 </html>

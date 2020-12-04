@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+</head>
+<body>
+
+</body>
+<div th:fragment="footer">
+    <!-- Footer -->
+    <footer class="page-footer">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <div th:if="not ${user}">
+                <!-- Call to action -->
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                        <h5 class="mb-1">Зарегистрироваться сейчас</h5>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="/registration" class="btn btn-outline-success my-2 my-sm-0">Sign up!</a>
+                    </li>
+                </ul>
+                <!-- Call to action -->
+            </div>
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> NoWhereNothing.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+</div>
+</html>
