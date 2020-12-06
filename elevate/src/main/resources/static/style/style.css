@@ -1,3 +1,7 @@
+:root{
+    --pageMax: 1260px;
+}
+
 .test:before{
     content: "";
     position: absolute;
@@ -8,19 +12,139 @@
     background-color: #e8e8e8;
 }
 
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(64, 140, 193);
+}
+
+a:hover{
+    color: rgb(76, 162, 210);
+}
+
+button {
+    border: none;
+}
+
+.centered {
+    display: grid;
+    place-items: center;
+}
+
+.section {
+    padding: 2rem 4rem;
+    max-width: var(--pageMax);
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.dec-pancake {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+}
+
+.items-gap > * {
+    margin: 0 1rem;
+}
+
+
+.card-md {
+    width: clamp(23ch, 50%, 46ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 15px;
+}
+
+.card-mk {
+    width: clamp(11ch, 11ch, 46ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+}
+
+.rounded-10{
+    border-radius: 10px;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.mg-top-2rem {
+    margin-top: 2rem;
+}
+
+.bg-lightblue {
+    background-color: rgb(241, 244, 249);
+}
+
+.bg-lightcyan {
+    background-color: rgb(230, 248, 234);
+}
+
+.no-bg {
+    background: none;
+}
+/*.nav-links * {*/
+/*    margin: 0 1rem;*/
+/*}*/
+
+
+
+
 .image-header{
     padding: 40px;
     width: 100%;
 }
-
-.profile-bg{
-    background: url("../images/clouds.jpg");
-}
-
-.index-bg{
-    background: url("../images/index-bg.jpg");
-}
-
 
 .profile-card{
     padding: 20px;
@@ -28,14 +152,145 @@
 }
 
 .content{
-    /*border: 1px solid gainsboro;*/
-    min-height: 50vh;
+    background-color: white;
+}
+
+.page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.main{
+    /*! margin: auto; */
+    /*! display: grid; */
+    /*! grid-template-columns: auto 1fr auto; */
+    background-color: #f8f8f8;
+}
+
+/*.content {*/
+/*    width: clamp(23ch, 50%, 46ch);*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    padding: 1rem;*/
+/*}*/
+
+
+
+
+.page-header {
+    padding: 1rem;
+    background-color: #d5f1f6;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.page-header ul{
+    /*display: inline-flex;*/
+    /*list-style: none;*/
+    /*text-align: center;*/
+    /*justify-content: space-between;*/
+}
+
+.header-refs li {
+    padding-right: 2rem;
+    /*display: inline-block;*/
+}
+
+.header-logo{
+    padding: 0   1rem;
+}
+
+.header-logo h3{
+    margin: 0;
+    font-size: 2rem;
+    color: rgb(26, 26, 26);
+}
+
+.header-logo h3:hover{
+    color: rgb(31, 115, 132);
+}
+
+.nav-row {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(32, 1fr);
+    place-items: center;
+}
+
+.page-up-footer{
+    background-color: #6f6f6f;
+    padding: 2rem;
+    color: white;
 }
 
 .page-footer{
-    background-color: #cce8e2;
+    background-color: #626262;
+    padding: 1rem;
+    color: #fff;
 }
 
-.footer-copyright{
-    background-color: #badfdc;
+.btn {
+    display: block;
+    background-color: white;
+    color: #3dba80;
+    padding: 0.7rem 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: 1px solid #3dba80;
+    border-radius: 45px;
 }
+
+.btn:hover {
+    color: #f8f8f8;
+    border-color: #377052;
+    background-color: #5ecb92;
+    cursor: pointer;
+}
+
+.btn:active {
+    /*top: 5px;*/
+    color: white;
+    border-color: #42a782;
+    background-color: #62e9ac;
+}
+
+
+
+.form-card h2{
+    margin: 2rem auto;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.form-input{
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0.3rem 0;
+    padding: 10px;
+}
+
+.profile-card{
+    width: clamp(16ch, 75%, 80ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 3rem;
+    background-color: white;
+}
+
+.profile-card-content {
+    display: grid;
+    grid-template-columns: minmax(50%, 256px) 1fr;
+}
+/*.page-header {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+*/

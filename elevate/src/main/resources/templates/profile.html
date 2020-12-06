@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Elevate профиль</title>
-    <link th:insert="bootstrap::style"/>
     <link th:href="@{/static/style/style.css}" rel="stylesheet" type="text/css"/>
 </head>
-<div th:include="navbar::navbar"></div>
 <body>
-<div class="profile-bg image-header">
-    <div class="container-xl">
-        <div class="card mb-3 profile-card">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img th:src="@{/static/images/default-user.jpg}" class="card-img" alt=""/>
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5><span class="card-title" th:text="${user.name}"></span><span class="text-center"
-                                                                                         th:text="${user.surname}"></span>
+<div class="page">
+    <div th:insert="header::header"></div>
+    <main class="main stack centered">
+            <div class="profile-card">
+                <div class="profile-card-content">
+
+
+                    <div class="profile-img">
+                        <img src="/static/images/default-user.jpg">
+                    </div>
+                    <div class="profile-info">
+                        <h5><span class="card-title" th:text="${user.name}"></span> <span class="text-center"
+                                                                                          th:text="${user.surname}"></span>
                         </h5>
                         <p class="card-text" th:text="${user.email}"></p>
-                        <p class="card-text"><small class="text-muted">Дата регистрации:<span
+                        <p class="card-text"><small class="text-muted">Дата регистрации: <span
                                 th:text="${user.registrationDate}"></span></small></p>
                     </div>
+            </div>
+        </div>
+        <div class="section">
+            <p>Зачения характеристик пользователя <span class="text-center" th:text="${user.name}"></span>:</p>
+            <div class="row">
+                <div class="col-1">
+                    <h4>Memory </h4>
+                </div>
+                <div class="col">
+                    <p th:text="${user.characteristic.memory}"></p>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+    <div th:insert="footer::footer"></div>
 </div>
-<div class="content container-xl">
-    <p>Зачения характеристик пользователя<span class="text-center" th:text="${user.name}"></span>:</p>
-    <div class="row">
-        <div class="col-1">
-            Memory
-        </div>
-        <div class="col">
-            <p th:text="${user.characteristic.memory}"></p>
-        </div>
-    </div>
-</div>
-<div th:insert="bootstrap::js"></div>
+
+
 </body>
 </html>

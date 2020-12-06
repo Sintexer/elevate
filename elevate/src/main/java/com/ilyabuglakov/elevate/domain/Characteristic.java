@@ -25,6 +25,6 @@ public class Characteristic {
     private Long id;
     private int memory;
 
-    @OneToOne(mappedBy = "characteristic", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "characteristic")
     private User user;
 }

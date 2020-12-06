@@ -1,7 +1,7 @@
 package com.ilyabuglakov.elevate.controller;
 
 import com.ilyabuglakov.elevate.model.registration.FormUserDTO;
-import com.ilyabuglakov.elevate.service.UserSecurityDetailsService;
+import com.ilyabuglakov.elevate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,16 +17,16 @@ import javax.validation.Valid;
 public class RegistrationController {
 
     @Autowired
-    private UserSecurityDetailsService userService;
+    private UserService userService;
 
     @GetMapping
-    public String getRegistrationPage(){
+    public String getRegistrationPage() {
         return "registration";
     }
 
     @PostMapping("/new")
-    public String registerUser(@ModelAttribute("user") @Valid FormUserDTO formUserDTO, Model model){
-        if(userService.saveUser(formUserDTO.asUser()))
+    public String registerUser(@ModelAttribute("user") @Valid FormUserDTO formUserDTO, Model model) {
+        if (userService.saveUser(formUserDTO.asUser()))
             return "redirect:/auth/login";
         else {
             model.addAttribute("registrationFailed", formUserDTO.getEmail());

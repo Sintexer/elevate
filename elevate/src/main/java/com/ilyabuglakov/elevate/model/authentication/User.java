@@ -42,7 +42,7 @@ public class User {
     private Status status = Status.ACTIVE;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "characteristic_id")
+    @JoinColumn(name = "characteristic_id", referencedColumnName = "id")
     private Characteristic characteristic = new Characteristic();
 
     @PrePersist
