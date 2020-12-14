@@ -10,15 +10,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Optional;
 
-@Controller("/test")
+@Controller
+@RequestMapping("/tests")
 public class TestController {
 
     @Autowired
     private TestService testService;
+
+    @GetMapping("/catalog")
+    public String getTestCatalogPage(Model model){
+        List<Test> tests = testService.getAll();
+        model.addAttribute("tests", tests);
+        return "testCatalog";
+    }
 
     @PreAuthorize("hasAuthority('auth')")
     @GetMapping("/{id}")

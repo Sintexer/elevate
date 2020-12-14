@@ -81,8 +81,7 @@ button {
     border-radius: 15px;
 }
 
-.card-sm {
-    width: clamp(16ch, 30%, 46ch);
+.test-card {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -153,6 +152,16 @@ button {
 
 .padding-2rem {
     padding: 2rem;
+}
+
+.align-items-left {
+    align-items: first baseline;
+}
+
+.test-grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
 }
 
 
@@ -312,5 +321,13 @@ button {
 
 .error-code{
     font-size: 14rem;
+}
+
+.test-params {
+    padding: 3rem 0 1.5rem;
+}
+
+.padding-top-2rem {
+    padding-top: 2rem;
 }
 

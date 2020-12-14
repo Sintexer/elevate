@@ -10,11 +10,24 @@
     <div th:insert="header::header"></div>
     <main class="main">
         <div class="section">
-            <div class="content centered">
-                <p>Каталог</p>
+            <div class="section content centered">
+                <h2>Каталог</h2>
             </div>
-            <div th:if="${tests}" class="content dec-pancake">
-
+            <div th:if="${tests}" class="content test-grid padding-2rem">
+                <div class="test-card centered" th:each="test : ${tests}">
+                    <h2 th:text="${test.testName}"></h2>
+                    <div class="test-params align-items-left">
+                        <p>Сложность: <b th:text="${test.difficulty}"></b></p>
+                        <p>Число вопросов: <b th:text="${test.questions.size}"></b></p>
+                        <div th:unless="${test.characteristicTypeSet == empty}" class="test-characteristics padding-top-2rem">
+                            <p>Характеристики: </p>
+                            <div th:each="characteristic:${test.characteristicTypeSet}">
+                                <h4 th:text="${characteristic.name}"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <a th:href="'./test' + '?testId=' + ${test.id}" class="btn mg-top-2rem">Пройти тест</a>
+                </div>
             </div>
         </div>
     </main>

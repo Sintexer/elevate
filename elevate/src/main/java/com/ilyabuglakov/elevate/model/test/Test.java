@@ -33,7 +33,7 @@ public class Test {
     @JoinColumn(name = "test_id")
     private Set<Question> questions;
 
-    @ElementCollection(targetClass = CharacteristicType.class)
+    @ElementCollection(targetClass = CharacteristicType.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     @Column(name = "characteristic", nullable = false)
     @Enumerated(EnumType.STRING)
