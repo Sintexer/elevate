@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FormUserDTO {
-    public String email;
+    public String username;
     public String name;
     public String surname;
     public String password;
 
     public User asUser(){
         User user = new User();
-        user.setEmail(email);
+        user.setEmail(username);
         user.setPassword(password);
         user.setName(name);
         user.setSurname(surname);

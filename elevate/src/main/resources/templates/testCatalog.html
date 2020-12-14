@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/static/style/style.css}" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Elevate Tests</title>
+</head>
+<body>
+<div class="page">
+    <div th:insert="header::header"></div>
+    <main class="main">
+        <div class="section">
+            <div class="content centered">
+                <p>Каталог</p>
+            </div>
+            <div th:if="${tests}" class="content dec-pancake">
+
+            </div>
+        </div>
+    </main>
+    <div th:insert="footer::footer"></div>
+</div>
+</body>
+</html>

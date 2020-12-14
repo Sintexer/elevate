@@ -1,30 +1,35 @@
 package com.ilyabuglakov.elevate.domain;
 
 import com.ilyabuglakov.elevate.model.authentication.User;
-import lombok.AllArgsConstructor;
+import com.ilyabuglakov.elevate.model.test.Test;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "characteristics")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Characteristic {
+@Table(name = "test_result")
+public class TestResult {
+
     @Id
     @GeneratedValue
-    private Long id;
-    private int memory;
+    private long id;
 
-    @OneToOne(mappedBy = "characteristic")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "test_id")
+    private Test test;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private User user;
+
+    private int percentage;
+
+
 }

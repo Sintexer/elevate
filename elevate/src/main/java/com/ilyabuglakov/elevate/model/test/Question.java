@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Data
-@Table(name = "questions")
+@Table(name = "question")
 @Entity
 public class Question {
     @Id
@@ -25,10 +25,11 @@ public class Question {
     private Long id;
     private String content;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "question_id")
     private Set<Answer> answers;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "test_id", nullable = false)
-    private Test test;
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+//    @JoinColumn(name = "test_id", nullable = false)
+//    private Test test;
 }

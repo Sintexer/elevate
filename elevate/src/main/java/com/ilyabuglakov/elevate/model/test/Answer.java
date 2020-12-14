@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "answers")
+@Table(name = "answer")
 //@OneToMany(mappedBy = "answers")
 public class Answer {
     @Id
@@ -24,8 +24,8 @@ public class Answer {
     private Long id;
     private String content;
     private boolean correct;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "question_id", nullable = false)
-    private Question question;
+//
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+//    @JoinColumn(name = "question_id", nullable = false)
+//    private Question question;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/static/style/style.css}" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Elevate</title>
+</head>
+<body>
+<div class="page">
+    <div th:insert="header::header"></div>
+    <main class="main">
+        <div class="section">
+            <div class="content centered">
+                <p>Описание, название теста (Шапка)</p>
+                <p th:text="${test.testName}"></p>
+            </div>
+        </div>
+        <div th:if="${test}" class="section stack centered">
+            <div class="card-md">
+                <div class="centered border-bottom-1px-grey padding-2rem" th:each="question : ${test.questions}">
+                    <p th:text="${question.content}"></p>
+                    <form name="answer">
+                        <div th:each="answer : ${question.answers}" class="stack">
+                            <div><input type="radio" name="answer" value="${answer.id}"/><label
+                                    th:text="${answer.content}"></label></div>
+                        </div>
+                    </form>
+                </div>
+                <button class="btn mg-top-2rem" type="submit">Завершить тест</button>
+            </div>
+        </div>
+    </main>
+    <div th:insert="footer::footer"></div>
+</div>
+</body>
+</html>

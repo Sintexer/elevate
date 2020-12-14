@@ -16,7 +16,7 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
@@ -81,6 +81,15 @@ button {
     border-radius: 15px;
 }
 
+.card-sm {
+    width: clamp(16ch, 30%, 46ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+}
+
 .card-mk {
     width: clamp(11ch, 11ch, 46ch);
     display: flex;
@@ -137,6 +146,14 @@ button {
 /*.nav-links * {*/
 /*    margin: 0 1rem;*/
 /*}*/
+
+.border-bottom-1px-grey {
+    border-bottom: 1px solid gainsboro;
+}
+
+.padding-2rem {
+    padding: 2rem;
+}
 
 
 
@@ -288,9 +305,12 @@ button {
     display: grid;
     grid-template-columns: minmax(50%, 256px) 1fr;
 }
-/*.page-header {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+.error-msg{
+    font-size: 2rem;
 }
-*/
+
+.error-code{
+    font-size: 14rem;
+}
+

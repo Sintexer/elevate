@@ -29,7 +29,7 @@ public class RegistrationController {
         if (userService.saveUser(formUserDTO.asUser()))
             return "redirect:/auth/login";
         else {
-            model.addAttribute("registrationFailed", formUserDTO.getEmail());
+            model.addAttribute("registrationFailed", formUserDTO.getUsername());
             return "registration";
         }
     }
