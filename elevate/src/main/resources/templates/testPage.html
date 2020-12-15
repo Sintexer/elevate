@@ -20,10 +20,16 @@
                 <div class="centered border-bottom-1px-grey padding-2rem" th:each="question : ${test.questions}">
                     <p th:text="${question.content}"></p>
                     <form name="answer">
-                        <div th:each="answer : ${question.answers}" class="stack">
-                            <div><input type="radio" name="answer" value="${answer.id}"/><label
-                                    th:text="${answer.content}"></label></div>
-                        </div>
+<!--                        <th:block th:switch="${question.hasMultipleAnswers}">-->
+                            <div th:if="${question.hasMultipleAnswers} eq false" th:each="answer : ${question.answers}" class="stack">
+                                <div><input type="radio" name="answer" value="${answer.id}"/><label
+                                        th:text="${answer.content}"></label></div>
+                            </div>
+                            <div th:if="${question.hasMultipleAnswers} eq true" th:each="answer : ${question.answers}" class="stack">
+                                <div><input type="checkbox" name="answer" value="${answer.id}"/><label
+                                        th:text="${answer.content}"></label></div>
+                            </div>
+<!--                        </th:block>-->
                     </form>
                 </div>
                 <button class="btn mg-top-2rem" type="submit">Завершить тест</button>

@@ -37,5 +37,5 @@ public class Test {
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     @Column(name = "characteristic", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Set<CharacteristicType> characteristicTypeSet;
+    private Set<CharacteristicType> characteristics;
 }

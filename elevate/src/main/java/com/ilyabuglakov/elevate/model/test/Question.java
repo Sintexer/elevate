@@ -29,6 +29,12 @@ public class Question {
     @JoinColumn(name = "question_id")
     private Set<Answer> answers;
 
+    public boolean hasMultipleAnswers(){
+        return answers.stream()
+                .filter(Answer::isCorrect)
+                .count() > 1;
+    }
+
 //    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 //    @JoinColumn(name = "test_id", nullable = false)
 //    private Test test;
